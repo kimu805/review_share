@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_07_090033) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_07_091555) do
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -23,6 +23,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_07_090033) do
     t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "works", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.integer "type"
+    t.integer "api_id"
+    t.string "genre"
+    t.text "description"
+    t.date "release_date"
+    t.string "author_or_director"
+    t.string "thumbnail_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
