@@ -32,26 +32,23 @@ class TmdbService
     parse_movies(response.parse["results"])
   end
 
-  def fetch_genres
-    response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { 
-      api_key: @api_key,
-      language: "ja-JP"
-    })
-    return [] unless response.status.success?
-
-    genres_data = response.parse["genres"]
-    genres_data.each_with_object({}) do |genre, hash|
-      hash[genre["id"]] = genre["name"]
-    end
-  end
-
-  def show_movie(movie_id)
+  # 映画の詳細を取得するメソッド
+  def fetch_movie_detail(movie_id)
     response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}", params: {
       api_key: @api_key,
       language: "jp-JP"
     })
-    return [] unless response.status.success?
-    parse_movies(response.parse["results"])
+    return nil unless response.status.success?
+    movie = response.parse
+    {
+      title: movie["title"],
+      genre: genre_names(movie["genres"].map { |g| g["id"] }),
+      description: movie["overview"],
+      release_date: movie["release_date"],
+      author_or_director: movie["director"],
+      thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+      api_id: movie["id"]
+    }
   end
 
   private
@@ -67,6 +64,20 @@ class TmdbService
         thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
         api_id: movie["id"]
       }  
+    end
+  end
+
+  # ジャンル名を取得するメソッド
+  def fetch_genres
+    response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { 
+      api_key: @api_key,
+      language: "ja-JP"
+    })
+    return [] unless response.status.success?
+
+    genres_data = response.parse["genres"]
+    genres_data.each_with_object({}) do |genre, hash|
+      hash[genre["id"]] = genre["name"]
     end
   end
 
