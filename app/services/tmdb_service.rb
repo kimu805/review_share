@@ -50,4 +50,9 @@ class TmdbService
     end
   end
 
+  def genre_names(genre_ids)
+    genre_ids.map {
+      |id| @genres[id]
+    }.join(", ")
+  end
 end
