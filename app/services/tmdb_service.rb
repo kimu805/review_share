@@ -23,6 +23,17 @@ class TmdbService
     parse_movies(response.parse["results"])
   end
 
+  def fetch_genres
+    response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { api_key: @api_key})
+    return [] unless response.status.success?
+
+    genres_data = response.parse["genres"]
+    genres_data.each_with_object({}) do |genre, hash|
+      hash[genre["id"]] = genre["name"]
+    end
+  end
+
+  private
   # 映画のデータをぱーすして整理する
   def parse_movies(movies)
     movies.map do |movie|
@@ -33,6 +44,12 @@ class TmdbService
       author_or_director: movie["director"],
       thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
       api_id: movie["id"]
+    end
+
+    def genre_names(genre_ids)
+      genre_ids.map {
+        |id| @genres[id]
+      }.join(", ")
     end
   end
 
