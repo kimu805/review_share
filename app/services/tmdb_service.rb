@@ -7,6 +7,9 @@ class TmdbService
     @api_key = ENV["TMDB_API_KEY"]
   end
 
+  # 人気映画を取得するメソッド
+  
+
   # def fetch_movie(movie_id)
   #   response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}", params: { api_key: @api_key})
 
