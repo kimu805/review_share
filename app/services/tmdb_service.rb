@@ -45,6 +45,15 @@ class TmdbService
     end
   end
 
+  def show_movie(movie_id)
+    response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}", params: {
+      api_key: @api_key,
+      language: "jp-JP"
+    })
+    return [] unless response.status.success?
+    parse_movies(response.parse["results"])
+  end
+
   private
   # 映画のデータをぱーすして整理する
   def parse_movies(movies)
