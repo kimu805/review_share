@@ -2,7 +2,10 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:edit, :update, :show, :destroy]
 
   def index
-    @works = Work.all
+    tmdb_service = TmdbService.new
+
+    @popular_moview = tmdb_service.fetch_popular_movies
+    @now_playing_movies = tmdb_service.fetch_now_playing_movies
   end
 
   def new
