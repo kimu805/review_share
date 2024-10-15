@@ -5,6 +5,7 @@ class TmdbService
 
   def initialize
     @api_key = ENV["TMDB_API_KEY"]
+    @genres = fetch_genres
   end
 
   # 人気映画を取得するメソッド
@@ -38,7 +39,7 @@ class TmdbService
   def parse_movies(movies)
     movies.map do |movie|
       title: movie["title"],
-      genre: movie["genre_ids"].join(", ")
+      genre: genre_names(movie["genre_ids"])
       description: movie["overview"],
       release_date: movie["release_date"],
       author_or_director: movie["director"],
