@@ -10,7 +10,11 @@ class TmdbService
 
   # 人気映画を取得するメソッド
   def fetch_popular_movies
-    response = HTTP.get("#{TMDB_API_URL}/movie/popular", params: { api_key: @api_key })
+    response = HTTP.get("#{TMDB_API_URL}/movie/popular", params: { 
+      api_key: @api_key,
+      region: "JP",
+      language: "ja-JP"
+    })
     return [] unless response.status.success?
 
     parse_movies(response.parse["results"])
@@ -18,7 +22,12 @@ class TmdbService
 
   # 新着映画を取得するメソッド
   def fetch_now_playing_movies
-    response = HTTP.get("#{TMDB_API_URL}/movie/now_playing", params: { api_key: @api_key })
+    response = HTTP.get("#{TMDB_API_URL}/movie/now_playing", params: { 
+      api_key: @api_key,
+      region: "JP"
+      language: "ja-JP"
+    
+  })
     return [] unless response.status.success?
 
     parse_movies(response.parse["results"])
