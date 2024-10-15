@@ -16,5 +16,4 @@ class WorksController < ApplicationController
   def set_tmdb_service
     tmdb_service = TmdbService.new
   end
-
 end
