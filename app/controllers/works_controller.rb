@@ -8,6 +8,8 @@ class WorksController < ApplicationController
   end
 
   def show
+    movie_id = params[:id]
+    
   end
 
 end
