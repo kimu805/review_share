@@ -12,7 +12,7 @@
   <tbody>
     <% @popular_movies.each do |movie| %>
       <tr>
-        <td><%= movie[:title] %></td>
+        <td><%= link_to movie[:title], work_path(id: movie[:api_id]) %></td>
         <td><%= movie[:genre] %></td>
         <td><%= movie[:release_date] %></td>
         <td>
