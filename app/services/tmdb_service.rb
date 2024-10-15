@@ -26,8 +26,7 @@ class TmdbService
       api_key: @api_key,
       region: "JP"
       language: "ja-JP"
-    
-  })
+    })
     return [] unless response.status.success?
 
     parse_movies(response.parse["results"])
