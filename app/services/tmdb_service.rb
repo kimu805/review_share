@@ -38,6 +38,15 @@ class TmdbService
   # 映画のデータをぱーすして整理する
   def parse_movies(movies)
     movies.map do |movie|
+      {
+        title: movie["title"],
+        genre: genre_names(movie["genre_ids"]),
+        description: movie["overview"],
+        release_date: movie["release_date"],
+        author_or_director: movie["director"],
+        thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+        api_id: movie["id"]
+      }  
     end
   end
 
