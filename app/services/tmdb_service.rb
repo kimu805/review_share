@@ -24,7 +24,7 @@ class TmdbService
   def fetch_now_playing_movies
     response = HTTP.get("#{TMDB_API_URL}/movie/now_playing", params: { 
       api_key: @api_key,
-      region: "JP"
+      region: "JP",
       language: "ja-JP"
     })
     return [] unless response.status.success?
