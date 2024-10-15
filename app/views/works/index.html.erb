@@ -1,2 +1,24 @@
-<h1>Works#index</h1>
-<p>Find me in app/views/works/index.html.erb</p>
+<h1>作品一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>種類</th>
+      <th>ジャンル</th>
+      <th>公開日</th>
+      <th>サムネイル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @works.each do |work| %>
+      <tr>
+        <td><%= link_to work.title, work %></td>
+        <td><%= work.type %></td>
+        <td><%= work.genre %></td>
+        <td><%= work.release_date %></td>
+        <td><%= image_tag(work.thumbnail_url, size: "100x150") if work.thumbnail_url.present? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
