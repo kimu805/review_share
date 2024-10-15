@@ -33,7 +33,10 @@ class TmdbService
   end
 
   def fetch_genres
-    response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { api_key: @api_key})
+    response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { 
+      api_key: @api_key,
+      language: "ja-JP"
+    })
     return [] unless response.status.success?
 
     genres_data = response.parse["genres"]
