@@ -18,7 +18,6 @@ class WorksController < ApplicationController
   def import_from_tmdb
     tmdb_service = TmdbService.new
     movie_data = tmdb_service.fetch_movie(params[:tmdb_id])
-
     if movie_data
       @work = Work.new(movie_data)
       if @work.save
