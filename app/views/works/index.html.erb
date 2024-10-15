@@ -1,25 +1,56 @@
-<h1>作品一覧</h1>
-
-<%= link_to "update", import_from_tmdb_path(tmdb_id: 20000), data: { turbo_method: :post } %>
+<h1>人気の映画</h1>
 
 <table>
   <thead>
     <tr>
       <th>タイトル</th>
-      <th>種類</th>
       <th>ジャンル</th>
       <th>公開日</th>
       <th>サムネイル</th>
     </tr>
   </thead>
   <tbody>
-    <% @works.each do |work| %>
+    <% @popular_movies.each do |movie| %>
       <tr>
-        <td><%= link_to work.title, work %></td>
-        <td><%= work.type %></td>
-        <td><%= work.genre %></td>
-        <td><%= work.release_date %></td>
-        <td><%= image_tag(work.thumbnail_url, size: "100x150") if work.thumbnail_url.present? %></td>
+        <td><%= movie[:title] %></td>
+        <td><%= movie[:genre] %></td>
+        <td><%= movie[:release_date] %></td>
+        <td>
+          <% if movie[:thumbnail_url].present? %>
+            <img src="<%= movie[:thumbnail_url] %>" alt="<%= movie[:title] %>のサムネイル" width="100">
+          <% else %>
+            <p>サムネイルなし</p>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>新着映画</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>ジャンル</th>
+      <th>公開日</th>
+      <th>サムネイル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @now_playing_movies.each do |movie| %>
+      <tr>
+        <td><%= movie[:title] %></td>
+        <td><%= movie[:genre] %></td>
+        <td><%= movie[:release_date] %></td>
+        <td>
+          <% if movie[:thumbnail_url].present? %>
+            <img src="<%= movie[:thumbnail_url] %>" alt="<%= movie[:title] %>のサムネイル" width="100">
+          <% else %>
+            <p>サムネイルなし</p>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
