@@ -36,9 +36,10 @@ class TmdbService
   def fetch_movie_detail(movie_id)
     response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}", params: {
       api_key: @api_key,
-      language: "jp-JP"
+      language: "ja-JP"
     })
     return nil unless response.status.success?
+    
     movie = response.parse
     {
       title: movie["title"],
