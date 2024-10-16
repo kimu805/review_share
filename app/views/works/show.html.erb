@@ -5,5 +5,6 @@
 <p><strong>あらすじ:</strong> <%= @work[:description] %></p>
 <p><strong>公開日:</strong> <%= @work[:release_date] %></p>
 <p><strong>著者または監督:</strong> <%= @work[:author_or_director] %></p>
+<p><strong>キャスト:</strong> <%= @work[:main_cast] %>...etc</p>
 <p><strong>サムネイル:</strong></p>
 <%= image_tag(@work[:thumbnail_url]) if @work[:thumbnail_url].present? %>
