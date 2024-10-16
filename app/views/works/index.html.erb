@@ -1,0 +1,57 @@
+<h1>人気の映画</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>ジャンル</th>
+      <th>公開日</th>
+      <th>サムネイル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @popular_movies.each do |movie| %>
+      <tr>
+        <td><%= link_to movie[:title], work_path(id: movie[:api_id]) %></td>
+        <td><%= movie[:genre] %></td>
+        <td><%= movie[:release_date] %></td>
+        <td>
+          <% if movie[:thumbnail_url].present? %>
+            <img src="<%= movie[:thumbnail_url] %>" alt="<%= movie[:title] %>のサムネイル" width="100">
+          <% else %>
+            <p>サムネイルなし</p>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>新着映画</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>ジャンル</th>
+      <th>公開日</th>
+      <th>サムネイル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @now_playing_movies.each do |movie| %>
+      <tr>
+        <td><%= link_to movie[:title], work_path(id: movie[:api_id]) %></td>
+        <td><%= movie[:genre] %></td>
+        <td><%= movie[:release_date] %></td>
+        <td>
+          <% if movie[:thumbnail_url].present? %>
+            <img src="<%= movie[:thumbnail_url] %>" alt="<%= movie[:title] %>のサムネイル" width="100">
+          <% else %>
+            <p>サムネイルなし</p>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

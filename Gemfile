@@ -73,3 +73,6 @@ end
 
 gem "pry-rails"
 gem "devise"
+
+gem "http"           # HTTPリクエスト用
+gem "dotenv-rails"   # 環境変数の管理
