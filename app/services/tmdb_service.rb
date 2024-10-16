@@ -41,6 +41,18 @@ class TmdbService
     return nil unless response.status.success?
     
     movie = response.parse
+    # クレジット情報（監督やキャスト）を取得
+    credits_response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}/credits", params: {
+      api_key: @api_key,
+      language: "ja-JP"
+    })
+    return nil unless credits_response.status.success?
+
+    credits = credits_response.parse
+
+    director = credits["crew"].find { |crew_member| crew_member["job"] == "Director" }
+    main_cast = credits["cast"].take(8).map { |cast_member| cast_member["name"] }
+
     {
       title: movie["title"],
       genre: genre_names(movie["genres"].map { |g| g["id"] }),
