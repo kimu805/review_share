@@ -58,6 +58,8 @@ class TmdbService
       genre: genre_names(movie["genres"].map { |g| g["id"] }),
       description: movie["overview"],
       release_date: movie["release_date"],
+      author_or_director: director ? director["name"] : "情報なし",
+      main_cast: main_cast.join(", "),
       thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
       api_id: movie["id"]
     }
