@@ -1,0 +1,6 @@
+ja:
+  aciverecord:
+    attributes:
+      user:
+        nickname: 名前
+        profile: プロフィール
