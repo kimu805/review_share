@@ -1,7 +1,10 @@
 .header_box{
   display: flex;
   height: 50px;
-  background-color: red;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid black;
 }
 .header_left{
 
