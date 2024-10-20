@@ -2,8 +2,8 @@ class WorksController < ApplicationController
   before_action :set_tmdb_service
 
   def index
-    @popular_movies = @tmdb_service.fetch_popular_movies
-    @now_playing_movies = @tmdb_service.fetch_now_playing_movies
+    @popular_movies = @tmdb_service.fetch_popular_movies.limit(5)
+    @now_playing_movies = @tmdb_service.fetch_now_playing_movies.limit(5)
   end
 
   def show
