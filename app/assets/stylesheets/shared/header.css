@@ -19,14 +19,16 @@
   display: flex;
 }
 .header_navbar_item{
-  margin-right: 70px;
+  margin: 0 30px 0 40px;
 }
 .flash_message_box{
-
+  height: 50px;
+  padding: 20px;
+  text-align: center;
 }
 .flash_message_notice{
-
+  background-color: #98d98e;
 }
 .flash_message_alert{
-
+  background-color: #e5abbe;
 }
