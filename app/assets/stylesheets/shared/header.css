@@ -23,12 +23,14 @@
 }
 .flash_message_box{
   height: 50px;
-  padding: 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 .flash_message_notice{
   background-color: #98d98e;
+  padding: 20px;
 }
 .flash_message_alert{
   background-color: #e5abbe;
+  padding: 20px;
 }
