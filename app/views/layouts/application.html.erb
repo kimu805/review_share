@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel= "stylesheet" href= "reset.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -15,21 +15,44 @@
       <div class= "header_box">
         <div class= "header_left">
           <div class= "header_appTitle">
-
+            review_share
           </div>
         </div>
         <div class= "header_right">
           <ul class= "header_navbar_list">
-            <li class= "header_navbar_item"></li>
+            <% if user_signed_in? %>
+              <li class= "header_navbar_item">
+                映画
+              </li>
+              <li class= "header_navbar_item">
+                本
+              </li>
+              <li class= "header_navbar_item">
+                ログアウト
+              </li>
+            <% else %>
+              <li class= "header_navbar_item">
+                会員登録
+              </li>
+              <li class= "header_navbar_item">
+                ログイン
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </header>
-    <% if flash[:notice] %>
-      <%= flash[:notice] %>
-    <% elsif flash[:alert] %>
-      <%= flash[:alert] %>
-    <% end %>
+    <div class= "flash_message_box">
+      <% if flash[:notice] %>
+        <div class= "flash_message_notice">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class= "flash_message_alert">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
