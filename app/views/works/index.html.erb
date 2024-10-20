@@ -39,7 +39,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @now_playing_movies.each do |movie| %>
+    <% @now_playing_movies.first(5).each do |movie| %>
       <tr>
         <td><%= link_to movie[:title], work_path(id: movie[:api_id]) %></td>
         <td><%= movie[:genre] %></td>
