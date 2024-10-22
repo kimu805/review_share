@@ -71,6 +71,9 @@ class TmdbService
       query: query,
       language: "ja"
     })
+    return [] unless response.status.success?
+
+    parse_movies(response.parse["results"])
   end
 
   private
