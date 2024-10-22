@@ -6,6 +6,15 @@ class WorksController < ApplicationController
     @now_playing_movies = @tmdb_service.fetch_now_playing_movies
   end
 
+  def search
+    query = params[:query]
+    if query.present?
+      @movies = @tmdb_service.fetch_search_results(query)
+    else
+      @movies = []
+    end
+  end
+
   def show
     @work = @tmdb_service.fetch_movie_detail(params[:id])
   end
