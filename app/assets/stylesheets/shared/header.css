@@ -9,9 +9,9 @@
 /* .header_left{
 
 } */
-/* .header_appTitle{
-
-} */
+.header_appTitle{
+  font-weight: bold;
+}
 /* .header_right{
 
 } */
@@ -20,6 +20,7 @@
 }
 .header_navbar_item{
   margin: 0 30px 0 40px;
+  font-weight: bold;
 }
 .flash_message_box{
   height: 50px;
