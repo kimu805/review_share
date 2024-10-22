@@ -65,6 +65,14 @@ class TmdbService
     }
   end
 
+  def fetch_search_results(query)
+    response = HTTP.get("#{TMDB_API_URL}/search/movie", params: {
+      api_key: @api_key,
+      query: query,
+      language: "ja"
+    })
+  end
+
   private
   # 映画のデータをぱーすして整理する
   def parse_movies(movies)
