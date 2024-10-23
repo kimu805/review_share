@@ -1,5 +1,6 @@
 .worksIndex_searchForm{
   display: flex;
+  justify-content: center;
   margin-bottom: 20px;
   height: 50px;
 }
@@ -20,7 +21,7 @@
   content: '';
 }
 .worksIndex_searchForm_textField{
-  width: 250px;
+  width: 500px;
   height: 40px;
   padding: 5px 25px 5px 0;
   border: none;
