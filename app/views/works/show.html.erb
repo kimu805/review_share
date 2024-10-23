@@ -8,3 +8,5 @@
 <p><strong>キャスト:</strong> <%= @work[:main_cast] %>...etc</p>
 <p><strong>サムネイル:</strong></p>
 <%= image_tag(@work[:thumbnail_url]) if @work[:thumbnail_url].present? %>
+
+<%= link_to "戻る", :back, class: "link" %>

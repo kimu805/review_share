@@ -1,0 +1,8 @@
+<%= form_with url: search_works_path, method: :get , local: true, class: "worksIndex_searchForm" do |f| %>
+  <div class= "worksIndex_searchForm_textField_box">
+    <%= f.text_field :query, value: params[:query], placeholder: "タイトルを入力", class: "worksIndex_searchForm_textField" %>
+  </div>
+  <div class= "worksIndex_searchForm_submit_box">
+    <%= f.submit "検索", class: "worksIndex_searchForm_submit" %>
+  </div>
+<% end %>

@@ -73,7 +73,8 @@ class TmdbService
     })
     return [] unless response.status.success?
 
-    parse_movies(response.parse["results"])
+    movies = parse_movies(response.parse["results"])
+    sort_by_release_date(movies)
   end
 
   private
@@ -92,6 +93,10 @@ class TmdbService
     end
   end
 
+  def sort_by_release_date(movies)
+    movies.sort_by { |movie| movie[:release_date] }.reverse
+  end
+
   # ジャンル名を取得するメソッド
   def fetch_genres
     response = HTTP.get("#{TMDB_API_URL}/genre/movie/list", params: { 
@@ -106,6 +111,7 @@ class TmdbService
     end
   end
 
+  # ジャンルIDをジャンル名に変換
   def genre_names(genre_ids)
     genre_ids.map {
       |id| @genres[id]

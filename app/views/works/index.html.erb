@@ -1,40 +1,31 @@
-<h1>映画を検索</h1>
+<%= render "search_works" %>
 
-<%= form_with url: search_works_path, method: :get, local: true do |f| %>
-  <%= f.label :query, "映画タイトルを入力" %>
-  <%= f.text_field :query, value: params[:query] %>
-  <%= f.submit "検索" %>
-<% end %>
+<div class= "worksIndex_popularMovies_box">
 
+  <div class= "worksIndex_popularMovies_title_box">
+    <h1 class= "worksIndex_popularMovies_title">人気の映画</h1>
+    <p class= "worksIndex_popularMovies_title_time">0000/00/00 00:00現在</p>
+  </div>
 
-<h1>人気の映画</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>ジャンル</th>
-      <th>公開日</th>
-      <th>サムネイル</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class= "worksIndex_popularMovies_movies">
     <% @popular_movies.first(5).each do |movie| %>
-      <tr>
-        <td><%= link_to movie[:title], work_path(id: movie[:api_id]) %></td>
-        <td><%= movie[:genre] %></td>
-        <td><%= movie[:release_date] %></td>
-        <td>
-          <% if movie[:thumbnail_url].present? %>
-            <img src="<%= movie[:thumbnail_url] %>" alt="<%= movie[:title] %>のサムネイル" width="100">
-          <% else %>
-            <p>サムネイルなし</p>
-          <% end %>
-        </td>
-      </tr>
+      <div class= "worksIndex_popularMovies_movie">
+        <div class= "worksIndex_popularMovies_movie_image">
+          <%= image_tag(movie[:thumbnail_url], class: "worksIndex_popularMovies_movie_imageTag") if movie[:thumbnail_url].present? %>
+        </div>
+        <div class= "worksIndex_popularMovies_movie_title">
+          <%= movie[:title] %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <div class= "worksIndex_popularMovies_movies_more">
+    もっと見る  →
+  </div>
+
+</div>
+
 
 <h1>新着映画</h1>
 

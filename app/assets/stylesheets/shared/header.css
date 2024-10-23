@@ -1,6 +1,6 @@
 .header_box{
   display: flex;
-  height: 50px;
+  height: 20px;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -23,15 +23,19 @@
   font-weight: bold;
 }
 .flash_message_box{
-  height: 50px;
+  height: 40px;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 5px auto 0 ;
+  line-height: 40px;
+  width: 80vw;
 }
 .flash_message_notice{
-  background-color: #98d98e;
-  padding: 20px;
+  color: #fff;
+  background-color: #028760;
+  border-radius: 100vh;
 }
 .flash_message_alert{
-  background-color: #e5abbe;
-  padding: 20px;
+  color: #fff;
+  background-color: #c53d43;
+  border-radius: 100vh;
 }
