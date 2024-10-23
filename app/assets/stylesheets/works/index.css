@@ -18,7 +18,8 @@
 }
 .worksIndex_popularMovies_movie{
   width: 20%;
-  height: 304px;
+  height: 250px;
+  /* height: 304px; */
 }
 .worksIndex_popularMovies_movie_image{
   width: 100%;
@@ -33,4 +34,12 @@
   margin-top: 10px;
   font-size: 12px;
   font-weight: bold;
+}
+.worksIndex_popularMovies_movies_more{
+  text-align: center;
+  padding: 15px;
+  background-color: gray;
+  width: 200px;
+  margin: 20px auto;
+  color: white;
 }
