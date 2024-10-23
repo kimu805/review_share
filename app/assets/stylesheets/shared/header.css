@@ -1,6 +1,6 @@
 .header_box{
   display: flex;
-  height: 50px;
+  height: 20px;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -26,12 +26,19 @@
   height: 50px;
   text-align: center;
   margin-bottom: 30px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 .flash_message_notice{
-  background-color: #98d98e;
-  padding: 20px;
+  color: #fff;
+  background-color: #028760;
+  border-radius: 100vh;
+  padding: 7px 20px 0;
 }
 .flash_message_alert{
-  background-color: #e5abbe;
-  padding: 20px;
+  color: #fff;
+  background-color: #c53d43;
+  border-radius: 100vh;
+  padding: 7px 20px 0;
 }
