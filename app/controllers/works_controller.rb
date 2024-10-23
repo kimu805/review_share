@@ -9,7 +9,7 @@ class WorksController < ApplicationController
   def search
     query = params[:query]
     if query.present?
-      @movies = @tmdb_service.fetch_search_results(query).order("release_date DESC")
+      @movies = @tmdb_service.fetch_search_results(query)
     else
       @movies = []
     end
