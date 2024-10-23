@@ -30,5 +30,7 @@
   object-fit: cover;
 }
 .worksIndex_popularMovies_movie_title{
+  margin-top: 10px;
   font-size: 12px;
+  font-weight: bold;
 }
