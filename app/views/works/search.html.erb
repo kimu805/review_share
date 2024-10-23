@@ -1,4 +1,4 @@
-<%= form_with url: search_works_path, data: {turbo_method: :get}, local: true do |f| %>
+<%= form_with url: search_works_path, method: :get , local: true do |f| %>
   <%= f.label :query, "映画タイトルを入力" %>
   <%= f.text_field :query, value: params[:query] %>
   <%= f.submit "検索" %>
@@ -11,7 +11,7 @@
   <ul>
     <% @movies.each do |movie| %>
       <li>
-        <p><%= link_to movie[:title], work_path(movie), class: "link" %></p>
+        <p><%= link_to movie[:title], work_path(id: movie[:api_id]), class: "link" %></p>
         <p>ジャンル：<%= movie[:genre] %></p>
         <p>公開日：<%= movie[:release_date] %></p>
         <% if movie[:thumbnail_url].present? %>
