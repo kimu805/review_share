@@ -73,7 +73,8 @@ class TmdbService
     })
     return [] unless response.status.success?
 
-    parse_movies(response.parse["results"])
+    movies = parse_movies(response.parse["results"])
+    sort_by_release_date(movies)
   end
 
   private
@@ -90,6 +91,10 @@ class TmdbService
         api_id: movie["id"]
       }  
     end
+  end
+
+  def sort_by_release_date(movies)
+    movies.sort_by { |movie| movie[:release_date] }.reverse
   end
 
   # ジャンル名を取得するメソッド
