@@ -106,6 +106,7 @@ class TmdbService
     end
   end
 
+  # ジャンルIDをジャンル名に変換
   def genre_names(genre_ids)
     genre_ids.map {
       |id| @genres[id]
