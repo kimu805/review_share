@@ -1,0 +1,8 @@
+<%= form_with url: search_works_path, method: :get, local: true do |f| %>
+  <%= f.label :query, "映画タイトルを入力" %>
+  <%= f.text_field :query, value: params[:query] %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<h1>検索結果</h1>
+
