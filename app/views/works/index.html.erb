@@ -1,5 +1,23 @@
 <%= render "search_works" %>
 
+<div class= "worksIndex_popularMovies_box">
+  <div class= "worksIndex_popularMovies_title_box">
+    <h1 class= "worksIndex_popularMovies_title">人気の映画</h1>
+    <p class= "worksIndex_popularMovies_title_time">0000/00/00 00:00現在</p>
+  </div>
+
+  <div class= "worksIndex_popularMovies_movies">
+    <% @popular_movies.first(5).each do |movie| %>
+      <div class= "worksIndex_popularMovies_movie">
+        <div class= "worksIndex_popularMovies_movie_image">
+          <%= image_tag(movie[:thumbnail_url]) if movie[:thumbnail_url].present?, class: "worksIndex_pupularMovies_movie_imageTag" %>
+        </div>
+        <div class= "worksIndex_popularMovies_movie"
+      </div>
+    <% end %>
+  </div>
+
+</div>
 
 
 
