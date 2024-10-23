@@ -12,11 +12,11 @@ class WorksController < ApplicationController
       @movies = @tmdb_service.fetch_search_results(query)
     else
       @movies = []
-      binding.pry
     end
   end
 
   def show
+    binding.pry
     @work = @tmdb_service.fetch_movie_detail(params[:id])
   end
 
