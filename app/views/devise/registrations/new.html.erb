@@ -6,6 +6,12 @@
   </div>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class= "form_group">
+      <div class= "form_label_box">
+        <div class= "form_label"><%= f.label :nickname %></div>
+        <div class= "form_required">必須</div>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
