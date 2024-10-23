@@ -1,42 +1,42 @@
-.worksIndex_popularMovies_box{
+.worksIndex_box{
 
 }
-.worksIndex_popularMovies_title_box{
+.worksIndex_title_box{
   text-align: center;
   margin-bottom: 10px;
 }
-.worksIndex_popularMovies_title{
+.worksIndex_title{
   font-size: 20px;
   font-weight: bold;
 }
-.worksIndex_popularMovies_title_time{
+.worksIndex_title_time{
   color: gray;
   font-size: 12px;
 }
-.worksIndex_popularMovies_movies{
+.worksIndex_movies{
   display: flex;
   gap: 10px;
 }
-.worksIndex_popularMovies_movie{
+.worksIndex_movie{
   width: 20%;
   height: 250px;
   /* height: 304px; */
 }
-.worksIndex_popularMovies_movie_image{
+.worksIndex_movie_image{
   width: 100%;
   height: 180px;
 }
-.worksIndex_popularMovies_movie_imageTag{
+.worksIndex_movie_imageTag{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.worksIndex_popularMovies_movie_title{
+.worksIndex_movie_title{
   margin-top: 10px;
   font-size: 12px;
   font-weight: bold;
 }
-.worksIndex_popularMovies_movies_more{
+.worksIndex_movies_more{
   text-align: center;
   padding: 15px;
   background-color: gray;
