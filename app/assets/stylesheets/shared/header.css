@@ -23,22 +23,19 @@
   font-weight: bold;
 }
 .flash_message_box{
-  height: 50px;
+  height: 40px;
   text-align: center;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
+  margin: 5px auto 0 ;
+  line-height: 40px;
+  width: 80vw;
 }
 .flash_message_notice{
   color: #fff;
   background-color: #028760;
   border-radius: 100vh;
-  padding: 7px 20px 0;
 }
 .flash_message_alert{
   color: #fff;
   background-color: #c53d43;
   border-radius: 100vh;
-  padding: 7px 20px 0;
 }
