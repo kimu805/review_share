@@ -10,7 +10,7 @@
     <% @popular_movies.first(5).each do |movie| %>
       <div class= "worksIndex_popularMovies_movie">
         <div class= "worksIndex_popularMovies_movie_image">
-          <%= image_tag(movie[:thumbnail_url]) if movie[:thumbnail_url].present?, class: "worksIndex_pupularMovies_movie_imageTag" %>
+          <%= image_tag(movie[:thumbnail_url]) if movie[:thumbnail_url].present?, class: "worksIndex_popularMovies_movie_imageTag" %>
         </div>
         <div class= "worksIndex_popularMovies_movie"
       </div>
