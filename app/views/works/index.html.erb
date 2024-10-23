@@ -4,7 +4,8 @@
 
   <div class= "worksIndex_title_box">
     <h1 class= "worksIndex_title">人気の映画</h1>
-    <p class= "worksIndex_title_time">0000/00/00 00:00現在</p>
+    <%= binding.pry %>
+    <p class= "worksIndex_title_time"><%= Time.current.strftime("%Y/%m/%d %H:00") %>現在</p>
   </div>
 
   <div class= "worksIndex_movies">
