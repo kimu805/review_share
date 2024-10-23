@@ -9,21 +9,21 @@
 
   <div class= "worksIndex_popularMovies_movies">
     <% @popular_movies.first(5).each do |movie| %>
-      <div class= "worksIndex_popularMovies_movie">
-        <div class= "worksIndex_popularMovies_movie_image">
-          <%= image_tag(movie[:thumbnail_url], class: "worksIndex_popularMovies_movie_imageTag") if movie[:thumbnail_url].present? %>
+        <div class= "worksIndex_popularMovies_movie">
+          <%= link_to(work_path(movie[:api_id])) do %>
+            <div class= "worksIndex_popularMovies_movie_image">
+              <%= image_tag(movie[:thumbnail_url], class: "worksIndex_popularMovies_movie_imageTag") if movie[:thumbnail_url].present? %>
+            </div>
+            <div class= "worksIndex_popularMovies_movie_title">
+              <%= movie[:title] %>
+            </div>
+          <% end %>
         </div>
-        <div class= "worksIndex_popularMovies_movie_title">
-          <%= movie[:title] %>
-        </div>
-      </div>
     <% end %>
   </div>
-
   <div class= "worksIndex_popularMovies_movies_more">
     もっと見る  →
   </div>
-
 </div>
 
 
