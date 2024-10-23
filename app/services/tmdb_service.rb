@@ -29,7 +29,9 @@ class TmdbService
     })
     return [] unless response.status.success?
 
-    parse_movies(response.parse["results"])
+    movies = parse_movies(response.parse["results"])
+    sort_by_release_date(movies)
+
   end
 
   # 映画の詳細を取得するメソッド
@@ -65,6 +67,7 @@ class TmdbService
     }
   end
 
+  # 検索結果を取得するメソッド
   def fetch_search_results(query)
     response = HTTP.get("#{TMDB_API_URL}/search/movie", params: {
       api_key: @api_key,
