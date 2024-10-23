@@ -1,6 +1,6 @@
 <h1>映画を検索</h1>
 
-<%= form_with url: search_works_path, method: :get, local: true do |f| %>
+<%= form_with url: search_works_path, method: :get , local: true do |f| %>
   <%= f.label :query, "映画タイトルを入力" %>
   <%= f.text_field :query, value: params[:query] %>
   <%= f.submit "検索" %>
