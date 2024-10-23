@@ -1,12 +1,10 @@
 <%= render "search_works" %>
 
 <div class= "worksIndex_box">
-
   <div class= "worksIndex_title_box">
     <h1 class= "worksIndex_title">人気の映画</h1>
     <p class= "worksIndex_title_time"><%= l Time.current, format: :custom %>  現在</p>
   </div>
-
   <div class= "worksIndex_movies">
     <% @popular_movies.first(5).each do |movie| %>
         <div class= "worksIndex_movie">
@@ -27,12 +25,10 @@
 </div>
 
 <div class= "worksIndex_box">
-
   <div class= "worksIndex_title_box">
     <h1 class= "worksIndex_title">新着の映画</h1>
     <p class= "worksIndex_title_time"><%= l Time.current, format: :custom %>  現在</p>
   </div>
-
   <div class= "worksIndex_movies">
     <% @now_playing_movies.first(5).each do |movie| %>
         <div class= "worksIndex_movie">
