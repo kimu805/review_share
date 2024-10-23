@@ -2,6 +2,7 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+      custom: "%Y/%m/%d %H:00"
   aciverecord:
     attributes:
       user:
