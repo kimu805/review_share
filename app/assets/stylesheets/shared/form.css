@@ -22,16 +22,19 @@
 }
 .form_label_box{
   display: flex;
+  margin-bottom: 5px;
 }
 .form_label{
   font-size: 16px;
   font-weight: bold;
   color: gray;
+  margin-right: 5px;
+
 }
 .form_required{
   color: white;
   background-color: red;
-  padding: 5px;
+  padding: 3px;
   font-size: 12px;
 }
 .form_input{
@@ -42,18 +45,28 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   background-color: #f7fcfe;
+  font-weight: bold;
 }
 .form_textArea{
-  height: 150px;
+  line-height: 1.7;
+  height: 10em;
   padding: 10px;
   width: 100%;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   background-color: #f7fcfe;
+  font-weight: bold;
 }
 .form_commit{
-
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  background-color: #007bbb;
+  border-radius: 5px;
 }
 .form_commit_text{
-
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
 }
