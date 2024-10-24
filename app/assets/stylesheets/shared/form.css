@@ -1,6 +1,9 @@
 .form_box{
   width: 80%;
-  background-color: gray;
+  background-color: white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 .form_title_box{
   text-align: center;
@@ -43,4 +46,10 @@
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
+}
+.form_commit{
+  
+}
+.form_commit_text{
+  
 }
