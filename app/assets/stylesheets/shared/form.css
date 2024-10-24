@@ -7,11 +7,11 @@
 }
 .form_title_box{
   text-align: center;
-  line-height: 50px;
-  border-bottom: 1px solid gray;
+  line-height: 100px;
+  border-bottom: 1px solid #f3f3f3;
 }
 .form_title{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 .form{
@@ -35,21 +35,25 @@
   font-size: 12px;
 }
 .form_input{
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid #f3f3f3;
   border-radius: 5px;
+  background-color: #f7fcfe;
 }
 .form_textArea{
   height: 150px;
   padding: 10px;
-  border: 1px solid gray;
+  width: 100%;
+  border: 1px solid #f3f3f3;
   border-radius: 5px;
+  background-color: #f7fcfe;
 }
 .form_commit{
-  
+
 }
 .form_commit_text{
-  
+
 }
