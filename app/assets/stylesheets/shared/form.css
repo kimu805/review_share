@@ -15,20 +15,32 @@
   padding: 20px;
 }
 .form_group{
-  
+  margin: 20px 0 ;
 }
 .form_label_box{
-
+  display: flex;
 }
 .form_label{
-
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
 }
 .form_required{
-
+  color: white;
+  background-color: red;
+  padding: 5px;
+  font-size: 12px;
 }
 .form_input{
-
+  height: 50px;
+  line-height: 50px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 .form_textArea{
-
+  height: 150px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
