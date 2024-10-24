@@ -18,15 +18,14 @@
 
     <div class= "form_group">
       <div class= "form_label_box">
-        <div class= "form_label"><%= f.label :nickname %></div>
-        <div class= "form_required">必須</div>
+        <div class= "form_label"><%= f.label :profile %></div>
       </div>
-      
+      <%= f.text_area :profile, class: "form_textArea" %>
     </div>
 
     <div class= "form_group">
       <div class= "form_label_box">
-        <div class= "form_label"><%= f.label :nickname %></div>
+        <div class= "form_label"><%= f.label :email %></div>
         <div class= "form_required">必須</div>
       </div>
       <%= f.email_field :email, class: "form_input" %>
@@ -34,7 +33,7 @@
 
     <div class= "form_group">
       <div class= "form_label_box">
-        <div class= "form_label"><%= f.label :nickname %></div>
+        <div class= "form_label"><%= f.label :password %></div>
         <div class= "form_required">必須</div>
       </div>
       <%= f.password_field :password, class: "form_input" %>
@@ -42,7 +41,7 @@
 
     <div class= "form_group">
       <div class= "form_label_box">
-        <div class= "form_label"><%= f.label :nickname %></div>
+        <div class= "form_label"><%= f.label :password_confirmation %></div>
         <div class= "form_required">必須</div>
       </div>
       <%= f.password_field :password_confirmation, class: "form_input" %>
