@@ -1,11 +1,11 @@
-<div class= "user_form_box">
+<div class= "form_box">
   <div class= "user_form_title_box">
     <div class= "user_form_title">
       メンバー登録
     </div>
   </div>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class= "form_group">
