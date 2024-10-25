@@ -1,0 +1,52 @@
+.worksShow{
+  display: flex;
+}
+.worksShow_left{
+  width: 260px;
+}
+.worksShow_image{
+  width: 100%;
+  height: 320px;
+}
+.worksShow_imageTag{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.worksShow_right{
+  margin-left: 20px;
+}
+.worksShow_title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.worksShow_releaseDate{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.worksShow_category_box{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.worksShow_description_box{
+  margin-bottom: 10px;
+}
+.worksShow_heading3{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.worksShow_description_content{
+  font-size: 12px;
+}
+.worksShow_director_box{
+  margin-bottom: 10px;
+}
+.worksShow_human_name{
+  padding: 5px;
+  font-size: 12px;
+}
+.worksShow_mainCast_box{
+  margin-bottom: 10px;
+}
