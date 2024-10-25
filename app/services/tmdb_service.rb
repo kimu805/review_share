@@ -56,6 +56,7 @@ class TmdbService
     main_cast = credits["cast"].take(8).map { |cast_member| cast_member["name"] }
 
     {
+      type: "映画",
       title: movie["title"],
       genre: genre_names(movie["genres"].map { |g| g["id"] }),
       description: movie["overview"],
