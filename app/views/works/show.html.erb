@@ -11,7 +11,7 @@
       <%= @work[:title] %>
     </div>
     <div class= "worksShow_releaseDate">
-      公開日：<%= Date.parse(@work[:release_date]) %>
+      公開日：<%= l Date.parse(@work[:release_date]) %>
     </div>
     <div class= "worksShow_category_box">
       種類：<%= @work[:type] %>  /  ジャンル： <%= @work[:genre] %>
@@ -37,4 +37,6 @@
   </div>
 </div>
 
-<%= link_to "←  戻る", :back, class: "link" %>
+<div class= "back">
+  <%= link_to "←  戻る", :back, class: "link" %>
+</div>
