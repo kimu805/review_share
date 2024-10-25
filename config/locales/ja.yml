@@ -2,7 +2,6 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-      short: "%Y/%m/%d"
       custom: "%Y/%m/%d %H:00"
   aciverecord:
     attributes:
