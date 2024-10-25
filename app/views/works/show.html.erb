@@ -1,7 +1,7 @@
 <div class= "worksShow">
   <div class= "worksShow_left">
     <div class= "worksShow_image">
-      <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag" if @work[thumbnail_url].present?) %>
+      <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag") if @work[:thumbnail_url].present? %>
     </div>
   </div>
   <div class= "worksShow_right">
@@ -9,7 +9,28 @@
       <%= @work[:title] %>
     </div>
     <div class= "worksShow_releaseDate">
-      <%= l @work[:release_date], format: : %>
+      公開日：<%= l Date.parse(@work[:release_date]), format: :short %>
+    </div>
+    <div class= "worksShow_genre">
+      ジャンル：<%= @work[:genre] %>
+    </div>
+    <div class= "worksShow_description_box">
+      <div class= "worksShow_heading3">あらすじ</div>
+      <div class= "worksShow_description_content">
+        <%= simple_format(h(@work[:description]), {}, sanitize: false, wrapper_tag: "div") %>
+      </div>
+    </div>
+    <div class= "worksShow_director_box">
+      <div class= "worksShow_heading3">監督</div>
+      <div class= "worksShow_human_name">
+        <%= @work[:author_or_director] %>
+      </div>
+    </div>
+    <div class= "worksShow_mainCast_box">
+      <div class= "worksShow_heading3">出演者</div>
+      <div class= "worksShow_human_name">
+        <%= @work[:main_cast] %>
+      </div>
     </div>
   </div>
 </div>
@@ -26,6 +47,7 @@
 <p><strong>公開日:</strong> <%= @work[:release_date] %></p>
 <p><strong>著者または監督:</strong> <%= @work[:author_or_director] %></p>
 <p><strong>キャスト:</strong> <%= @work[:main_cast] %>...etc</p>
+<%= binding.pry %>
 <p><strong>サムネイル:</strong></p>
 <%= image_tag(@work[:thumbnail_url]) if @work[:thumbnail_url].present? %>
 
