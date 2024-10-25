@@ -1,6 +1,11 @@
-<h2>Log in</h2>
+<div class= "form_box">
+  <div class= "form_title_box">
+    <div class= "form_title">
+      メンバー登録
+    </div>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -23,4 +28,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
