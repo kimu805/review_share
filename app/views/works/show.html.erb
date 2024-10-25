@@ -1,3 +1,23 @@
+<div class= "worksShow">
+  <div class= "worksShow_left">
+    <div class= "worksShow_image">
+      <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag" if @work[thumbnail_url].present?) %>
+    </div>
+  </div>
+  <div class= "worksShow_right">
+    <div class= "worksShow_title">
+      <%= @work[:title] %>
+    </div>
+    <div class= "worksShow_releaseDate">
+      <%= l @work[:release_date], format: : %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <h1><%= @work[:title] %></h1>
 
 <p><strong>種類:</strong> <%= @work[:type] %></p>
