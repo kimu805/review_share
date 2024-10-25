@@ -6,25 +6,24 @@
   </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+    <div class= "form_group">
+      <div class= "form_label_box">
+        <div class= "form_label"><%= f.label :email %></div>
+        <div class= "form_required">必須</div>
       </div>
-    <% end %>
+      <%= f.email_field :email, class: "form_input" %>
+    </div>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
+    <div class= "form_group">
+      <div class= "form_label_box">
+        <div class= "form_label"><%= f.label :password %></div>
+        <div class= "form_required">必須</div>
+      </div>
+      <%= f.password_field :password, class: "form_input" %>
+    </div>
+
+    <div class= "form_commit">
+      <%= f.submit "ログイン", class: "form_commit_text" %>
     </div>
   <% end %>
 
