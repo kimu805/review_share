@@ -1,3 +1,5 @@
+<%= render "search_works" %>
+
 <div class= "worksShow">
   <div class= "worksShow_left">
     <div class= "worksShow_image">
@@ -11,8 +13,8 @@
     <div class= "worksShow_releaseDate">
       公開日：<%= l Date.parse(@work[:release_date]), format: :short %>
     </div>
-    <div class= "worksShow_genre">
-      ジャンル：<%= @work[:genre] %>
+    <div class= "worksShow_category_box">
+      種類：<%= @work[:type] %>  /  ジャンル： <%= @work[:genre] %>
     </div>
     <div class= "worksShow_description_box">
       <div class= "worksShow_heading3">あらすじ</div>
@@ -47,7 +49,6 @@
 <p><strong>公開日:</strong> <%= @work[:release_date] %></p>
 <p><strong>著者または監督:</strong> <%= @work[:author_or_director] %></p>
 <p><strong>キャスト:</strong> <%= @work[:main_cast] %>...etc</p>
-<%= binding.pry %>
 <p><strong>サムネイル:</strong></p>
 <%= image_tag(@work[:thumbnail_url]) if @work[:thumbnail_url].present? %>
 
