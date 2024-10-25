@@ -11,7 +11,7 @@
       <%= @work[:title] %>
     </div>
     <div class= "worksShow_releaseDate">
-      公開日：<%= l Date.parse(@work[:release_date]), format: :short %>
+      公開日：<%= Date.parse(@work[:release_date]) %>
     </div>
     <div class= "worksShow_category_box">
       種類：<%= @work[:type] %>  /  ジャンル： <%= @work[:genre] %>
@@ -31,25 +31,10 @@
     <div class= "worksShow_mainCast_box">
       <div class= "worksShow_heading3">出演者</div>
       <div class= "worksShow_human_name">
-        <%= @work[:main_cast] %>
+        <%= @work[:main_cast] %>...等
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-<h1><%= @work[:title] %></h1>
-
-<p><strong>種類:</strong> <%= @work[:type] %></p>
-<p><strong>ジャンル:</strong> <%= @work[:genre] %></p>
-<p><strong>あらすじ:</strong> <%= @work[:description] %></p>
-<p><strong>公開日:</strong> <%= @work[:release_date] %></p>
-<p><strong>著者または監督:</strong> <%= @work[:author_or_director] %></p>
-<p><strong>キャスト:</strong> <%= @work[:main_cast] %>...etc</p>
-<p><strong>サムネイル:</strong></p>
-<%= image_tag(@work[:thumbnail_url]) if @work[:thumbnail_url].present? %>
-
-<%= link_to "戻る", :back, class: "link" %>
+<%= link_to "←  戻る", :back, class: "link" %>
