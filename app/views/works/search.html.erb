@@ -1,5 +1,32 @@
 <%= render "search_works" %>
 
+<div class= "worksSearch">
+  <div class= "worksSearch_title">
+    検索結果
+  </div>
+  <% if @movies.present? %>
+    <div class= "worksSearch_works">
+      <% @movies.each do |movie| %>
+        <div class= "worksSearch_work">
+          <div class= "worksSearch_work_left">
+            <div class= "worksSearch_work_image">
+              <%= image_tag(movie[:thumbnail_url], class: "worksSearch_work_imageTag") if movie[:thumbnail_url].present? %>
+            </div>
+          </div>
+          <div class= "worksSearch_work_right">
+            <div class= "worksSearch_work_title"></div>
+            <div class= "worksSearch_work_releaseDate"></div>
+            <div class= "worksSearch_work_category"></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class= "worksSearch_null">
+      ヒットしませんでした。
+    </div>
+</div>
+
 <h1>検索結果</h1>
 
 <% if @movies.present? %>
