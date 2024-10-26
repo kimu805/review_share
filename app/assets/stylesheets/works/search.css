@@ -69,41 +69,41 @@
   height: 210px;
 }
 .worksSearch_work_imageTag{
-  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .worksSearch_work_right{
-  
+
 }
 .worksSearch_work_title{
-  
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 .worksSearch_work_releaseDate{
-  
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 .worksSearch_work_category{
-  
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 .worksSearch_work_human_box{
-  
+  display: flex;
 }
 .worksSearch_work_director_box{
-  
+
 }
 .worksSearch_work_heading3{
-  
+
 }
 .worksSearch_work_human_name{
-  
+
 }
 .worksSearch_work_cast_box{
-  
-}
-.worksSearch_work_heading3{
-  
-}
-.worksSearch_work_humane_name{
-  
+
 }
 .worksSearch_null{
-  
+
 }
