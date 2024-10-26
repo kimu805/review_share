@@ -93,17 +93,18 @@
   display: flex;
 }
 .worksSearch_work_director_box{
-
+  margin-right: 10px;
 }
 .worksSearch_work_heading3{
-
+  font-size: 12px;
+  font-weight: bold;
 }
 .worksSearch_work_human_name{
-
+  font-size: 12px;
 }
 .worksSearch_work_cast_box{
 
 }
 .worksSearch_null{
-
+  text-align: center;
 }
