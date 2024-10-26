@@ -9,7 +9,10 @@ class WorksController < ApplicationController
   def search
     query = params[:query]
     if query.present?
-      @movies = @tmdb_service.fetch_search_results(query)
+      @movies = @tmdb_service.fetch_search_results(query).map do |movie|
+        credits = @tmdb_service.fetch_credits(movie[:api_id])
+        movie.merge(credits)
+      end
     else
       @movies = []
     end
