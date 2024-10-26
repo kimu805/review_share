@@ -53,7 +53,7 @@ class TmdbService
     credits = credits_response.parse
 
     director = credits["crew"].find { |crew_member| crew_member["job"] == "Director" }
-    main_cast = credits["cast"].take(8).map { |cast_member| cast_member["name"] }
+    main_casts = credits["cast"].take(8).map { |cast_member| cast_member["name"] }
 
     {
       type: "映画",
@@ -62,7 +62,7 @@ class TmdbService
       description: movie["overview"],
       release_date: movie["release_date"],
       author_or_director: director ? director["name"] : "情報なし",
-      main_cast: main_cast.join(", "),
+      main_casts: main_casts.join(", "),
       thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
       api_id: movie["id"]
     }
@@ -79,6 +79,24 @@ class TmdbService
 
     movies = parse_movies(response.parse["results"])
     sort_by_release_date(movies)
+  end
+
+  # クレジット情報（監督やキャスト）を取得するメソッド
+  def fetch_credits(movie_id)
+    response = HTTP.get("#{TMDB_API_URL}/movie/#{movie_id}/credits", params: {
+      api_key: @api_key,
+      language: "ja"
+    })
+    return {director: nil, cast: [] } unless response.status.success?
+
+    credits = response.parse
+    director = credits["crew"].find { |person| person["job"] == "Director" }
+    casts = credits["cast"].take(8).map { |person| person["name"] }
+
+    {
+      director: director&.dig("name"),
+      main_casts: casts
+    }
   end
 
   private
