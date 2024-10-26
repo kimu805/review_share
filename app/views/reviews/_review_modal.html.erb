@@ -15,7 +15,12 @@
       </div>
 
       <div class= "review_spoiler_warning">
+        <%= f.check_box :spoiler, id: "review_spoiler_checkbox" %>ネタバレ
+        <p>レビューが映画の内容の練らばれに当たる場合はチェックしてください。</p>
+      </div>
 
+      <div class= "form_commit">
+        <%= f.submit "送信", class: "form_commit_text" %>
       </div>
     <% end %>
   </div>
