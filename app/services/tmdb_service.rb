@@ -104,6 +104,7 @@ class TmdbService
   def parse_movies(movies)
     movies.map do |movie|
       {
+        type: "映画",
         title: movie["title"],
         genre: genre_names(movie["genre_ids"]),
         description: movie["overview"],
