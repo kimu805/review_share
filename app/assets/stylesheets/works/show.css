@@ -2,11 +2,11 @@
   display: flex;
 }
 .worksShow_left{
-  width: 350px;
+  width: 270px;
 }
 .worksShow_image{
   width: 100%;
-  height: 340px;
+  height: 364px;
 }
 .worksShow_imageTag{
   width: 100%;
