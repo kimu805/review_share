@@ -5,6 +5,9 @@
     <div class= "worksShow_image">
       <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag") if @work[:thumbnail_url].present? %>
     </div>
+    <div>
+      <button id= "review_open_button">レビューを書く</button>
+    </div>
   </div>
   <div class= "worksShow_right">
     <div class= "worksShow_title">
