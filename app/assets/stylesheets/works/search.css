@@ -1,3 +1,4 @@
+/* searchForm ************************************************************************/
 .worksIndex_searchForm{
   display: flex;
   justify-content: center;
@@ -37,4 +38,63 @@
   color: white;
   padding: 8px 12px;
   border-radius: 10px;
+}
+
+/* search.html.erb ************************************************************************/
+.worksSearch{
+  
+}
+.worksSearch_title{
+  
+}
+.worksSearch_works{
+  
+}
+.worksSearch_work{
+  
+}
+.worksSearch_work_left{
+  
+}
+.worksSearch_work_image{
+  
+}
+.worksSearch_work_imageTag{
+  
+}
+.worksSearch_work_right{
+  
+}
+.worksSearch_work_title{
+  
+}
+.worksSearch_work_releaseDate{
+  
+}
+.worksSearch_work_category{
+  
+}
+.worksSearch_work_human_box{
+  
+}
+.worksSearch_work_director_box{
+  
+}
+.worksSearch_work_heading3{
+  
+}
+.worksSearch_work_human_name{
+  
+}
+.worksSearch_work_cast_box{
+  
+}
+.worksSearch_work_heading3{
+  
+}
+.worksSearch_work_humane_name{
+  
+}
+.worksSearch_null{
+  
 }
