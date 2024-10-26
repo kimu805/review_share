@@ -15,8 +15,12 @@
           </div>
           <div class= "worksSearch_work_right">
             <div class= "worksSearch_work_title"><%= movie[:title] %></div>
-            <div class= "worksSearch_work_releaseDate"></div>
-            <div class= "worksSearch_work_category"></div>
+            <div class= "worksSearch_work_releaseDate">
+              公開日：<%= l Date.parse(movie[:release_date]) %>
+            </div>
+            <div class= "worksSearch_work_category">
+              種類：<%= movie[:type] %>  /  ジャンル：<%= movie[:genre] %>
+            </div>
             <div class= "worksSearch_work_human_box">
               <div class= "worksSearch_work_director_box">
                 <div class= "worksSearch_work_heading3">監督</div>
