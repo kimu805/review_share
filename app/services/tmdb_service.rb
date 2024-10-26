@@ -77,22 +77,8 @@ class TmdbService
     })
     return [] unless response.status.success?
 
-    movies = response.parse["results"]
+    movies = parse_movies(response.parse["results"])
     sort_by_release_date(movies)
-
-    movies.map do |movie|
-      binding.pry
-      {
-        title: movie["title"],
-        genre: genre_names(movie["genre_ids"]),
-        description: movie["overview"],
-        release_date: movie["release_date"],
-        # author_or_director: fetch_movie_detail(movie[:id])[:director],
-        # main_cast: fetch_movie_detail(movie[:id])[:main_cast],
-        thumbnail_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
-        api_id: movie["id"]
-      }  
-    end
   end
 
   private
