@@ -56,9 +56,10 @@
 .worksSearch_work{
   display: flex;
   width: 90%;
-  border: 1px solid #71686c;
+  border: 3px solid #71686c;
   border-radius: 10px;
   padding: 20px;
+  margin: 20px auto;
 }
 .worksSearch_work_left{
   width: 150px;
