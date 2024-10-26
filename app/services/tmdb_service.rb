@@ -94,7 +94,7 @@ class TmdbService
     casts = credits["cast"].take(8).map { |person| person["name"] }
 
     {
-      director: director&.dig("name"),
+      author_or_director: director&.dig("name"),
       main_casts: casts
     }
   end
