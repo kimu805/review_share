@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_07_091555) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_26_093707) do
+  create_table "reviews", charset: "utf8", force: :cascade do |t|
+    t.float "rating"
+    t.text "comment"
+    t.boolean "spoiler"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
