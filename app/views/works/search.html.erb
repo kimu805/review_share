@@ -46,22 +46,4 @@
   <% end %>
 </div>
 
-<h1>検索結果</h1>
-
-<% if @movies.present? %>
-  <h2>検索結果一覧</h2>
-  <ul>
-    <% @movies.each do |movie| %>
-      <li>
-        <p><%= link_to movie[:title], work_path(id: movie[:api_id]), class: "link" %></p>
-        <p>ジャンル：<%= movie[:genre] %></p>
-        <p>公開日：<%= movie[:release_date] %></p>
-        <% if movie[:thumbnail_url].present? %>
-          <p>サムネイル：<%= image_tag(movie[:thumbnail_url], alt: movie[:title], width: 100) %></p>
-        <% end %>
-        <p></p>
-        <p></p>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "back" %>
