@@ -20,7 +20,7 @@ class WorksController < ApplicationController
 
   def show
     @work = @tmdb_service.fetch_movie_detail(params[:id])
-    @reviews = 
+    @reviews = @work.reviews.includes(:user)
   end
 
   private
