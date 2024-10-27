@@ -46,5 +46,10 @@
   <%= review.rating %>
   <%= review.comment %>
   <% if review.spoiler %>
+    ネタバレ
+  <% else %>
+    ネタバレ無し
+  <% end %>
+<% end %>
 
 <%= render "back" %>
