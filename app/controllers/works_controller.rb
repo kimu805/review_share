@@ -21,6 +21,7 @@ class WorksController < ApplicationController
   def show
     @api_id = params[:id]
     @work = @tmdb_service.fetch_movie_detail(@api_id)
+    @review = Review.new
     @reviews = Review.where(api_id: @api_id)
   end
 
