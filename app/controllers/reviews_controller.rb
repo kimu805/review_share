@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def create
-    @api_id = params[:api_id]
+    binding.pry
+    @api_id = params[:work_id]
     @review = Review.new(review_params)
     if @review.save
       redirect_to work_path(@api_id), notice: "レビューの保存に成功しました。"
