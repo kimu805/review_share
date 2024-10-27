@@ -10,12 +10,12 @@ function review_modal() {
 
   // モーダルを開く
   openBtn.addEventListener("click", () => {
-    modal.classList.add("show")
+    modal.style.display = "block"
   })
 
   // モーダルを閉じる
   closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show")
+    modal.style.display = "none"
   })
 
   // スライダーの値をリアルタイムで表示
@@ -26,13 +26,13 @@ function review_modal() {
   // モーダル外クリックで閉じる
   window.addEventListener("click", (event) => {
     if (event.target == modal) {
-      modal.classList.remove("show")
+      modal.style.display = "none"
     }
   })
 
   // フォーム送信時にモーダルを閉じる
   form.addEventListener("submit", () => {
-    modal.classList.remove("show")
+    modal.style.display = "none"
   })
 }
 
