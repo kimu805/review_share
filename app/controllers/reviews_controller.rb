@@ -11,10 +11,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:rating, :comment, :spoiler)
-  end
-  def set_work
-    @tmdb_service = TmdbService.new
-    @work = @tmdb_service.fetch_movie_detail(params[:id])
+    params.require(:review).permit(:rating, :comment, :spoiler).merge(user_id: current_user.id, work_id: params[:api_id])
   end
 end
