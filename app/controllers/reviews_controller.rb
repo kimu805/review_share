@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to work_path(params[:api_id]), notice: "レビューの保存に成功しました。"
     else
-      render :new, alert: "レビューの投稿に失敗しました。"
+      redirect_to work_path(params[:api_id]), alert: "レビューの投稿に失敗しました。"
     end
   end
 
