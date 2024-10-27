@@ -68,5 +68,6 @@
 .form_commit_text{
   color: white;
   font-weight: bold;
+  width: 100%;
   font-size: 16px;
 }
