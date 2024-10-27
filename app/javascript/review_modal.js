@@ -6,14 +6,16 @@ function review_modal() {
   const slider = document.getElementById("rating_slider")
   const form = document.getElementById("review_form")
 
+  console.log(openBtn)
+
   // モーダルを開く
   openBtn.addEventListener("click", () => {
-    modal.style.display = "block"
+    modal.classList.add("show")
   })
 
   // モーダルを閉じる
   closeBtn.addEventListener("click", () => {
-    modal.style.display = "none"
+    modal.classList.remove("show")
   })
 
   // スライダーの値をリアルタイムで表示
@@ -24,15 +26,15 @@ function review_modal() {
   // モーダル外クリックで閉じる
   window.addEventListener("click", (event) => {
     if (event.target == modal) {
-      modal.style.display = "none"
+      modal.classList.remove("show")
     }
   })
 
   // フォーム送信時にモーダルを閉じる
   form.addEventListener("submit", () => {
-    modal.style.display = "none"
+    modal.classList.remove("show")
   })
 }
 
 
-window.addEventListener("DOMContentLoaded", review_modal)
+window.addEventListener("turbo:load", review_modal)
