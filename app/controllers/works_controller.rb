@@ -21,9 +21,6 @@ class WorksController < ApplicationController
   def show
     @api_id = params[:id]
     @work = @tmdb_service.fetch_movie_detail(@api_id)
-    binding.pry
-    @review = @work.reviews.new
-    @reviews = @work.reviews.includes(:user)
   end
 
   private
