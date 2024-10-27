@@ -42,5 +42,9 @@
 </div>
 
 <% @reviews.each do |review| %>
+  <%= review.user.nickname %>
+  <%= review.rating %>
+  <%= review.comment %>
+  <% if review.spoiler %>
 
 <%= render "back" %>
