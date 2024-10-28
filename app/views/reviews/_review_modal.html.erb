@@ -2,21 +2,23 @@
   <div class= "modal_window">
     <div class= "modal_content">
       <span class= "modal_close_btn">&times;</span>
-      <h2>レビュー投稿</h2>
+      <h2 class= "reviewModal_heading2">レビュー投稿</h2>
 
       <%= form_with model: @review, url: work_reviews_path(@api_id), method: :post, local: true, id: "review_form" do |f| %>
-        <div class= "review_rating">
-          <span id= "rating_score">5.0</span>
-          <%= f.range_field :rating, min: 0, max: 5, step: 0.1, value: 5, id: "rating_slider" %>
+        <div class= "reviewModal_rating_box">
+          <span id= "rating_score" class= "reviewModal_rating_score">5.0</span>
+          <%= f.range_field :rating, min: 0, max: 5, step: 0.1, value: 5, id: "rating_slider", class: "reviewModal_rating_slider" %>
         </div>
 
-        <div class= "review_comment">
-          <%= f.label :comment, class: "form_label" %>
+        <div class= "form_group">
+          <div class= "form_label_box">
+            <%= f.label :comment, class: "form_label" %>
+          </div>
           <%= f.text_area :comment, class: "form_textarea" %>
         </div>
 
-        <div class= "review_spoiler_warning">
-          <%= f.check_box :spoiler, id: "review_spoiler_checkbox" %>ネタバレ
+        <div class= "reviewModal_spoiler_box">
+          <%= f.check_box :spoiler, id: "review_spoiler_checkbox", class: "reviewModal_spoiler_checkbox" %>ネタバレ
           <p>レビューが映画の内容のネタバレに当たる場合はチェックしてください。</p>
         </div>
 
