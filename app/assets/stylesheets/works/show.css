@@ -149,6 +149,31 @@
 .reviewModal_spoiler_box{
   margin: 10px 0;
 }
-.reviewModal_spoiler_checkbox{
-
+.reviewModal_spoiler_checkbox {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  margin: 4px;
+  border: 1px solid #8b98a5;
+  border-radius: 4px;
+}
+.reviewModal_spoiler_checkbox:checked {
+  border: 1px solid #8b98a5;
+  background-color: #1d9bf0;
+}
+.reviewModal_spoiler_checkbox:checked::before {
+  content: "";
+  display: block;
+  position: relative;
+  left: 9px;
+  top: 3.7px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.reviewModal_spoiler_checkbox:focus-visible {
+  outline: 2px solid #1d9bf0;
+  outline-offset: 2px;
 }
