@@ -10,10 +10,10 @@
           <%= f.range_field :rating, min: 0, max: 5, step: 0.1, value: 5, id: "rating_slider" %>
         </div>
 
-      <div class= "review_comment">
-        <%= f.label :comment, class: "form_label" %>
-        <%= f.text_area :comment, class: "form_textarea" %>
-      </div>
+        <div class= "review_comment">
+          <%= f.label :comment, class: "form_label" %>
+          <%= f.text_area :comment, class: "form_textarea" %>
+        </div>
 
       <div class= "review_spoiler_warning">
         <%= f.check_box :spoiler, id: "review_spoiler_checkbox" %>ネタバレ
