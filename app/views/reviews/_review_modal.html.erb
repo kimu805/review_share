@@ -2,7 +2,7 @@
   <div class= "modal_window">
     <div class= "modal_content">
       <span class= "modal_close_btn">&times;</span>
-      <h2>レビュー</h2>
+      <h2>レビュー投稿</h2>
 
       <%= form_with model: @review, url: work_reviews_path(@api_id), method: :post, local: true, id: "review_form" do |f| %>
         <div class= "review_rating">
