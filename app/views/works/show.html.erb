@@ -5,10 +5,16 @@
     <div class= "worksShow_image">
       <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag") if @work[:thumbnail_url].present? %>
     </div>
-    <div class= "worksShow_reviewButton_box">
-      <button id= "review_open_button" class= "worksShow_reviewButton">レビューを書く</button>
-      <%= render "reviews/review_modal" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class= "worksShow_reviewButton_box">
+        <button id= "review_open_button" class= "worksShow_reviewButton">レビューを書く</button>
+        <%= render "reviews/review_modal" %>
+      </div>
+    <% else %>
+      <div class= "worksShow_reviewButton_box">
+        <%= button_to "レビューを書く", new_user_session_path, class: "worksShow_reviewButton" %>
+      </div>
+    <% end %>
   </div>
   <div class= "worksShow_right">
     <div class= "worksShow_title">
