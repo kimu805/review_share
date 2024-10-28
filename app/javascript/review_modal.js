@@ -24,6 +24,7 @@ function review_modal() {
   // モーダル外クリックで閉じる
   window.addEventListener("click", (event) => {
     if (event.target == modal) {
+      console.log("クリック検知")
       modal.style.display = "none"
     }
   })
