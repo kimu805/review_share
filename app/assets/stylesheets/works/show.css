@@ -100,7 +100,7 @@
   font-weight: bold;
 }
 .reviewModal_rating_box{
-  
+  margin: 10px 0;
 }
 .reviewModal_rating_score{
   color: blue;
