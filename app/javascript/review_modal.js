@@ -6,7 +6,6 @@ function review_modal() {
   const slider = document.getElementById("rating_slider")
   const form = document.getElementById("review_form")
 
-
   // モーダルを開く
   openBtn.addEventListener("click", () => {
     modal.style.display = "block"
