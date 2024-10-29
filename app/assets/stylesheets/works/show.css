@@ -210,6 +210,7 @@
 }
 .worksShow_reviewsIndex_review_info{
   display: flex;
+  margin-bottom: 10px;
 }
 .worksShow_reviewsIndex_review_user{
   font-size: 12px;
@@ -224,6 +225,7 @@
 .worksShow_reviewsIndex_review_star_box{
   display: inline-flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 .worksShow_reviewsIndex_review_star{
   font-size: 16px;
@@ -237,6 +239,10 @@
   color: #ffd700;
   font-size: 12px;
 }
+.worksShow_reviewsIndex_review_spoiler_box{
+  display: flex;
+  align-items: center;
+}
 .worksShow_reviewsIndex_review_spoiler_message{
   color: red;
   font-size: 12px;
@@ -245,6 +251,8 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;
+  font-size: 12px;
+  
 }
 .worksShow_reviewsIndex_review_comment{
   margin: 10px 0 ;
