@@ -68,9 +68,9 @@
 }
 
 /* reviews/_review_modal.html.erb *******************************************************************************************************/
-.modal{
+/* .modal{
   
-}
+} */
 .modal_window{
   position: fixed;
   top: 0; left: 0;
