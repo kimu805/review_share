@@ -55,7 +55,7 @@
       「<%= @work[:title] %>」のレビュー
     </div>
     <div class= "worksShow_reviewsIndex_reviews">
-      <% @reviews.each do |review| %>
+      <% @reviews.each_with_index do |review, index| %>
         <div class= "worksShow_reviewsIndex_review">
           <div class= "worksShow_reviewsIndex_review_info">
             <div class= "worksShow_reviewsIndex_review_user">
@@ -74,11 +74,11 @@
           </div>
           <span class= "worksShow_reviewsIndex_review_score"><%= review.rating %></span>
           <% if review.spoiler %>
-            <div class= "worksShow_reviewsIndex_review_spoiler_box">
+            <div class= "worksShow_reviewsIndex_review_spoiler_box" data-index= "<%= index %>">
               <p class= "worksShow_reviewsIndex_review_spoiler_message">この内容はネタバレを含みます。表示しますか？</p>
-              <button class= "worksShow_reviewsIndex_review_spoiler_button">表示する</button>
+              <button class= "worksShow_reviewsIndex_review_spoiler_button" data-index= "<%= index %>">表示する</button>
             </div>
-            <div class= "worksShow_reviewsIndex_review_comment" style= "display: none;">
+            <div class= "worksShow_reviewsIndex_review_comment" style= "display: none;" data-index= "<%= index %>">
               <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
             </div>
           <% else %>
