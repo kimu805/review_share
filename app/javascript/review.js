@@ -43,17 +43,20 @@ window.addEventListener("turbo:load", review_modal)
 
 // review_star *******************************************************************************************
 function review_star() {
-  const starRating = document.querySelector(".worksShow_reviewsIndex_review_star_box")
-  const rating = parseFloat(starRating.getAttribute("data-rating"))
-  const stars = starRating.querySelectorAll(".worksShow_reviewsIndex_review_star")
-  
-  stars.forEach((star, index) => {
-    if (index < Math.floor(rating)) {
-      star.classList.add("active")
-    } else if (index < rating) {
-      star.style.color = `rgba(255, 215, 0, ${rating - index})`
-    }
+  const starRatings = document.querySelectorAll(".worksShow_reviewsIndex_review_star_box")
+  starRatings.forEach((starRating) => {
+    const rating = parseFloat(starRating.getAttribute("data-rating"))
+    const stars = starRating.querySelectorAll(".worksShow_reviewsIndex_review_star")
+    
+    stars.forEach((star, index) => {
+      if (index < Math.floor(rating)) {
+        star.classList.add("active")
+      } else if (index < rating) {
+        star.style.color = `rgba(255, 215, 0, ${rating - index})`
+      }
+    })
   })
+
 }
 
 window.addEventListener("turbo:load", review_star)
