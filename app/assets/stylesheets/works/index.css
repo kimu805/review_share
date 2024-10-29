@@ -21,9 +21,16 @@
   scroll-snap-type: x mandatory;
 }
 .worksIndex_movie{
+  flex: 0 0 auto;
   width: 130px;
   height: 250px;
   /* height: 304px; */
+  scroll-snap-align: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 16px;
+  text-align: center;
 }
 .worksIndex_movie_image{
   width: 100%;
