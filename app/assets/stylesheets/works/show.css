@@ -1,4 +1,8 @@
 /* works/show.html.erb *******************************************************************************/
+.worksShow_box{
+  display: flex;
+  justify-content: center;
+}
 .worksShow{
   display: flex;
 }
@@ -90,6 +94,8 @@
   border-radius: 8px;
 }
 .modal_close_btn{
+  font-weight: bold;
+  font-size: 24px;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -176,4 +182,71 @@
 .reviewModal_spoiler_checkbox:focus-visible {
   outline: 2px solid #1d9bf0;
   outline-offset: 2px;
+}
+
+/* reviewsIndex **************************************************************************/
+.worksShow_reviewsIndex_box{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.worksShow_reviewsIndex{
+  width: 50vw;
+  text-align: center;
+}
+.worksShow_reviewsIndex_title{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+.worksShow_reviewsIndex_reviews{
+
+}
+.worksShow_reviewsIndex_review{
+  width: 100%;
+  border: 2px solid #8b98a5;
+  border-radius: 8px;
+  padding: 20px;
+}
+.worksShow_reviewsIndex_review_info{
+  display: flex;
+}
+.worksShow_reviewsIndex_review_user{
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.worksShow_reviewsIndex_review_created_at{
+  font-size: 8px;
+  font-weight: bold;
+  color: gray;
+}
+.worksShow_reviewsIndex_review_star_box{
+  display: inline-flex;
+  align-items: center;
+}
+.worksShow_reviewsIndex_review_star{
+  font-size: 16px;
+  color: #ccc;
+  margin-right: 2px;
+}
+.worksShow_reviewsIndex_review_star.active{
+  color: #ffd700;
+}
+.worksShow_reviewsIndex_review_score{
+  color: #ffd700;
+  font-size: 12px;
+}
+.worksShow_reviewsIndex_review_spoiler_message{
+  color: red;
+  font-size: 12px;
+}
+.worksShow_reviewsIndex_review_spoiler_button{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+.worksShow_reviewsIndex_review_comment{
+  margin: 10px 0 ;
+  font-size: 12px;
 }
