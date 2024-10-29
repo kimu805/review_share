@@ -52,7 +52,11 @@ function review_star() {
       if (index < Math.floor(rating)) {
         star.classList.add("active")
       } else if (index < rating) {
-        star.style.color = `rgba(255, 215, 0, ${rating - index})`
+        // star.style.color = `rgba(255, 215, 0, ${rating - index})`
+        const fillPercentage = (rating - index) * 100;
+        star.style.background = `linear-gradient(90deg, gold ${fillPercentage}%, lightgray ${fillPercentage}%)`;
+        star.style.webkitBackgroundClip = "text";
+        star.style.color = "transparent";  // グラデーションのみを表示
       }
     })
   })
@@ -60,3 +64,26 @@ function review_star() {
 }
 
 window.addEventListener("turbo:load", review_star)
+
+// review_display
+function review_display() {
+  const displayButtons = document.querySelectorAll(".worksShow_reviewsIndex_review_spoiler_button")
+  const comments = document.querySelectorAll(".worksShow_reviewsIndex_review_comment")
+  const spoilerBoxes = document.querySelectorAll(".worksShow_reviewsIndex_review_spoiler_box")
+
+  displayButtons.forEach((displayButton) => {
+    comments.forEach((comment) => {
+      spoilerBoxes.forEach((spoilerBox) => {
+        if (displayButton.getAttribute("data-index") === comment.getAttribute("data-index") && displayButton.getAttribute("data-index") === spoilerBox.getAttribute("data-index")) {
+          displayButton.addEventListener("click", () => {
+            comment.style.display = "block"
+            spoilerBox.style.display = "none"
+          })
+        }
+      })
+    })
+  })
+
+}
+
+window.addEventListener("turbo:load", review_display)
