@@ -6,7 +6,7 @@
     <p class= "worksIndex_title_time"><%= l Time.current, format: :custom %>  現在</p>
   </div>
   <div class= "worksIndex_movies">
-    <% @popular_movies.first(5).each do |movie| %>
+    <% @popular_movies.first(10).each do |movie| %>
         <div class= "worksIndex_movie">
           <%= link_to(work_path(movie[:api_id])) do %>
             <div class= "worksIndex_movie_image">
@@ -30,7 +30,7 @@
     <p class= "worksIndex_title_time"><%= l Time.current, format: :custom %>  現在</p>
   </div>
   <div class= "worksIndex_movies">
-    <% @now_playing_movies.first(5).each do |movie| %>
+    <% @now_playing_movies.first(10).each do |movie| %>
         <div class= "worksIndex_movie">
           <%= link_to(work_path(movie[:api_id])) do %>
             <div class= "worksIndex_movie_image">
