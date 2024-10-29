@@ -74,8 +74,10 @@
           </div>
           <span class= "worksShow_reviewsIndex_review_score"><%= review.rating %></span>
           <% if review.spoiler %>
-            <p class= "worksShow_reviewsIndex_review_spoiler_message">この内容はネタバレを含みます。それでも表示しますか？</p>
-            <button class= "worksShow_reviewsIndex_review_spoiler_button">表示する</button>
+            <div class= "worksShow_reviewsIndex_review_spoiler_box">
+              <p class= "worksShow_reviewsIndex_review_spoiler_message">この内容はネタバレを含みます。表示しますか？</p>
+              <button class= "worksShow_reviewsIndex_review_spoiler_button">表示する</button>
+            </div>
             <div class= "worksShow_reviewsIndex_review_comment" style= "display: none;">
               <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
             </div>
