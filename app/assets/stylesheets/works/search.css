@@ -41,6 +41,10 @@
 }
 
 /* search.html.erb ************************************************************************/
+.worksSearch_box{
+  display: flex;
+  justify-content: center;
+}
 .worksSearch{
 
 }
