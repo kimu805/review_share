@@ -75,6 +75,7 @@ function review_display() {
     comments.forEach((comment) => {
       spoilerBoxes.forEach((spoilerBox) => {
         if (displayButton.getAttribute("data-index") === comment.getAttribute("data-index") && displayButton.getAttribute("data-index") === spoilerBox.getAttribute("data-index")) {
+          // １つのレビュー内で動作が完結するように指定。
           displayButton.addEventListener("click", () => {
             comment.style.display = "block"
             spoilerBox.style.display = "none"
