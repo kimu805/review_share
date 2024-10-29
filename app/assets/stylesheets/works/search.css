@@ -46,7 +46,8 @@
   justify-content: center;
 }
 .worksSearch{
-
+  width: 100%;
+  max-width: 700px;
 }
 .worksSearch_title{
   text-align: center;
