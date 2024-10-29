@@ -1,26 +1,19 @@
 <%= render "search_works" %>
 
-<div class= "worksSearch">
-  <% if @movies.present? %>
-    <div class= "worksSearch_title">
-      検索結果（<%= @movies.length %>件）
-    </div>
-    <div class= "worksSearch_works">
-      <% @movies.each do |movie| %>
-        <%= link_to(work_path(movie[:api_id]), class: "link") do %>
-          <div class= "worksSearch_work">
-            <div class= "worksSearch_work_left">
-              <div class= "worksSearch_work_image">
-                <%= image_tag(movie[:thumbnail_url], class: "worksSearch_work_imageTag") if movie[:thumbnail_url].present? %>
-              </div>
-            </div>
-            <div class= "worksSearch_work_right">
-              <div class= "worksSearch_work_title"><%= movie[:title] %></div>
-              <div class= "worksSearch_work_releaseDate">
-                公開日：<%= l Date.parse(movie[:release_date]) %>
-              </div>
-              <div class= "worksSearch_work_category">
-                種類：<%= movie[:type] %>  /  ジャンル：<%= movie[:genre] %>
+<div class= "worksSearch_box">
+  <div class= "worksSearch">
+    <% if @movies.present? %>
+      <div class= "worksSearch_title">
+        検索結果（<%= @movies.length %>件）
+      </div>
+      <div class= "worksSearch_works">
+        <% @movies.each do |movie| %>
+          <%= link_to(work_path(movie[:api_id]), class: "link") do %>
+            <div class= "worksSearch_work">
+              <div class= "worksSearch_work_left">
+                <div class= "worksSearch_work_image">
+                  <%= image_tag(movie[:thumbnail_url], class: "worksSearch_work_imageTag") if movie[:thumbnail_url].present? %>
+                </div>
               </div>
               <div class= "worksSearch_work_human_box">
                 <div class= "worksSearch_work_director_box">
