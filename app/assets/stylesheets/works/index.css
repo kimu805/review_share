@@ -22,8 +22,8 @@
 }
 .worksIndex_movie{
   flex: 0 0 auto;
-  width: 130px;
-  height: 250px;
+  width: 180px;
+  height: 260px;
   /* height: 304px; */
   scroll-snap-align: center;
   background-color: #f0f0f0;
@@ -34,7 +34,7 @@
 }
 .worksIndex_movie_image{
   width: 100%;
-  height: 180px;
+  height: 200px;
 }
 .worksIndex_movie_imageTag{
   width: 100%;
