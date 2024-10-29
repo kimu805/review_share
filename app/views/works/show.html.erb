@@ -47,6 +47,46 @@
   </div>
 </div>
 
+<div class= "worksShow_reviewsIndex">
+  <div class= "worksShow_reviewsIndex_title">
+    <%= @work[:title]のレビュー %>
+  </div>
+  <div class= "worksShow_reviewsIndex_reviews">
+    <% @reviews.each do |review| %>
+      <div class= "worksShow_reviewsIndex_review">
+        <div class= "worksShow_reviewsIndex_review_info">
+          <div class= "worksShow_reviewsIndex_review_user">
+            <%= review.user.nickname %>
+          </div>
+          <div class= "worksShow_reviewsIndex_review_created_at">
+            <%= l review.created_at %>
+          </div>
+        </div>
+        <div class= "worksShow_reviewsIndex_review_star_box" data-rating= "<%= review.rating %>">
+          <span class= "worksShow_reviewsIndex_review_star">&#9734;</span>
+          <span class= "worksShow_reviewsIndex_review_star">&#9734;</span>
+          <span class= "worksShow_reviewsIndex_review_star">&#9734;</span>
+          <span class= "worksShow_reviewsIndex_review_star">&#9734;</span>
+          <span class= "worksShow_reviewsIndex_review_star">&#9734;</span>
+        </div>
+        <span class= "worksShow_reviewsIndex_review_score"><%= review.rating %></span>
+        <% if review.spoiler %>
+          <p class= "worksShow_reviewsIndex_review_spoiler_message">この内容はネタバレを含みます。それでも表示しますか？</p>
+          <button class= "worksShow_reviewsIndex_review_spoiler_button">表示する</button>
+          <div class= "worksShow_reviewsIndex_review_comment" style= "display: none;">
+            <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
+          </div>
+        <% else %>
+          <div class= "worksShow_reviewsIndex_review_comment">
+            <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
 <% @reviews.each do |review| %>
   <%= review.user.nickname %>
   <%= review.rating %>
