@@ -205,6 +205,7 @@
   border: 2px solid #8b98a5;
   border-radius: 8px;
   padding: 20px;
+  margin: 10px 0;
 }
 .worksShow_reviewsIndex_review_info{
   display: flex;
@@ -226,7 +227,7 @@
   margin-bottom: 10px;
 }
 .worksShow_reviewsIndex_review_star{
-  font-size: 16px;
+  font-size: 24px;
   color: #ccc;
   margin-right: 2px;
 }
