@@ -1,38 +1,93 @@
 <%= render "search_works" %>
 
-<div class= "worksShow">
-  <div class= "worksShow_left">
-    <div class= "worksShow_image">
-      <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag") if @work[:thumbnail_url].present? %>
+<div class= "worksShow_box">
+  <div class= "worksShow">
+    <div class= "worksShow_left">
+      <div class= "worksShow_image">
+        <%= image_tag(@work[:thumbnail_url], class: "worksShow_imageTag") if @work[:thumbnail_url].present? %>
+      </div>
+      <% if user_signed_in? %>
+        <div class= "worksShow_reviewButton_box">
+          <button id= "review_open_button" class= "worksShow_reviewButton">レビューを書く</button>
+          <%= render "reviews/review_modal" %>
+        </div>
+      <% else %>
+        <div class= "worksShow_reviewButton_box">
+          <%= button_to "レビューを書く", new_user_session_path, class: "worksShow_reviewButton" %>
+        </div>
+      <% end %>
+    </div>
+    <div class= "worksShow_right">
+      <div class= "worksShow_title">
+        <%= @work[:title] %>
+      </div>
+      <div class= "worksShow_releaseDate">
+        公開日：<%= l Date.parse(@work[:release_date]) %>
+      </div>
+      <div class= "worksShow_category_box">
+        種類：<%= @work[:type] %>  /  ジャンル： <%= @work[:genre] %>
+      </div>
+      <div class= "worksShow_description_box">
+        <div class= "worksShow_heading3">あらすじ</div>
+        <div class= "worksShow_description_content">
+          <%= simple_format(h(@work[:description]), {}, sanitize: false, wrapper_tag: "div") %>
+        </div>
+      </div>
+      <div class= "worksShow_director_box">
+        <div class= "worksShow_heading3">監督</div>
+        <div class= "worksShow_human_name">
+          <%= @work[:author_or_director] %>
+        </div>
+      </div>
+      <div class= "worksShow_mainCast_box">
+        <div class= "worksShow_heading3">出演者</div>
+        <div class= "worksShow_human_name">
+          <%= @work[:main_casts] %>...等
+        </div>
+      </div>
     </div>
   </div>
-  <div class= "worksShow_right">
-    <div class= "worksShow_title">
-      <%= @work[:title] %>
+</div>
+
+<div class= "worksShow_reviewsIndex_box">
+  <div class= "worksShow_reviewsIndex">
+    <div class= "worksShow_reviewsIndex_title">
+      「<%= @work[:title] %>」のレビュー
     </div>
-    <div class= "worksShow_releaseDate">
-      公開日：<%= l Date.parse(@work[:release_date]) %>
-    </div>
-    <div class= "worksShow_category_box">
-      種類：<%= @work[:type] %>  /  ジャンル： <%= @work[:genre] %>
-    </div>
-    <div class= "worksShow_description_box">
-      <div class= "worksShow_heading3">あらすじ</div>
-      <div class= "worksShow_description_content">
-        <%= simple_format(h(@work[:description]), {}, sanitize: false, wrapper_tag: "div") %>
-      </div>
-    </div>
-    <div class= "worksShow_director_box">
-      <div class= "worksShow_heading3">監督</div>
-      <div class= "worksShow_human_name">
-        <%= @work[:author_or_director] %>
-      </div>
-    </div>
-    <div class= "worksShow_mainCast_box">
-      <div class= "worksShow_heading3">出演者</div>
-      <div class= "worksShow_human_name">
-        <%= @work[:main_casts] %>...等
-      </div>
+    <div class= "worksShow_reviewsIndex_reviews">
+      <% @reviews.each_with_index do |review, index| %>
+        <div class= "worksShow_reviewsIndex_review">
+          <div class= "worksShow_reviewsIndex_review_info">
+            <div class= "worksShow_reviewsIndex_review_user">
+              <%= review.user.nickname %>
+            </div>
+            <div class= "worksShow_reviewsIndex_review_created_at">
+              <%= l review.created_at %>
+            </div>
+          </div>
+          <div class= "worksShow_reviewsIndex_review_star_box" data-rating= "<%= review.rating %>">
+            <span class= "worksShow_reviewsIndex_review_star">&#9733;</span>
+            <span class= "worksShow_reviewsIndex_review_star">&#9733;</span>
+            <span class= "worksShow_reviewsIndex_review_star">&#9733;</span>
+            <span class= "worksShow_reviewsIndex_review_star">&#9733;</span>
+            <span class= "worksShow_reviewsIndex_review_star">&#9733;</span>
+          </div>
+          <span class= "worksShow_reviewsIndex_review_score"><%= review.rating %></span>
+          <% if review.spoiler %>
+            <div class= "worksShow_reviewsIndex_review_spoiler_box" data-index= "<%= index %>">
+              <p class= "worksShow_reviewsIndex_review_spoiler_message">この内容はネタバレを含みます。表示しますか？</p>
+              <button class= "worksShow_reviewsIndex_review_spoiler_button" data-index= "<%= index %>">表示する</button>
+            </div>
+            <div class= "worksShow_reviewsIndex_review_comment" style= "display: none;" data-index= "<%= index %>">
+              <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
+            </div>
+          <% else %>
+            <div class= "worksShow_reviewsIndex_review_comment">
+              <%= simple_format(h(review.comment), {}, sanitize: false, wrapper_tag: "div") %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

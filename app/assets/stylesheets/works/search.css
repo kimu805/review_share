@@ -41,8 +41,13 @@
 }
 
 /* search.html.erb ************************************************************************/
+.worksSearch_box{
+  display: flex;
+  justify-content: center;
+}
 .worksSearch{
-
+  width: 100%;
+  max-width: 700px;
 }
 .worksSearch_title{
   text-align: center;
@@ -55,7 +60,7 @@
 }
 .worksSearch_work{
   display: flex;
-  width: 90%;
+  width: 100%;
   border: 3px solid #71686c;
   border-radius: 10px;
   padding: 20px;

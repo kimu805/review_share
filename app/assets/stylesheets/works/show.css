@@ -1,3 +1,8 @@
+/* works/show.html.erb *******************************************************************************/
+.worksShow_box{
+  display: flex;
+  justify-content: center;
+}
 .worksShow{
   display: flex;
 }
@@ -12,6 +17,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.worksShow_reviewButton_box{
+  margin-top: 3px;
+  width: 100%;
+}
+.worksShow_reviewButton{
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background-color: #007bbb;
+  color: #fff;
+  text-align: center;
 }
 .worksShow_right{
   width: 70%;
@@ -32,6 +51,7 @@
 }
 .worksShow_description_box{
   margin-bottom: 10px;
+  line-height: 20px;
 }
 .worksShow_heading3{
   font-size: 16px;
@@ -50,4 +70,191 @@
 }
 .worksShow_mainCast_box{
   margin-bottom: 10px;
+}
+
+/* reviews/_review_modal.html.erb *******************************************************************************************************/
+/* .modal{
+  
+} */
+.modal_window{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal_content{
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  border-radius: 8px;
+}
+.modal_close_btn{
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.reviewModal_heading2{
+  font-size: 18px;
+  font-weight: bold;
+}
+.reviewModal_rating_box{
+  margin: 10px 0;
+}
+.reviewModal_rating_score{
+  color: blue;
+  font-size: 18px;
+}
+.reviewModal_rating_slider{
+  -webkit-appearance: none; 
+  appearance: none;
+  cursor: pointer; 
+  background: #8acdff; 
+  height: 14px; 
+  width: 100%; 
+  border-radius: 10px; 
+  border: solid 3px #dff1ff; 
+  outline: 0; /* アウトラインを消して代わりにfocusのスタイルをあてる */
+  &:focus {
+    box-shadow: 0 0 3px rgb(0, 161, 255);
+  }
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    background: #53aeff; 
+    width: 24px; 
+    height: 24px; 
+    border-radius: 50%; 
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); 
+  }
+  
+  &::-moz-range-thumb {
+    background: #53aeff; 
+    width: 24px; 
+    height: 24px; 
+    border-radius: 50%; 
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); 
+    border: none; 
+  }
+  
+  &::-moz-focus-outer {
+    border: 0;
+  }
+  
+  &:active::-webkit-slider-thumb {
+    box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+  }
+}
+.reviewModal_spoiler_box{
+  margin: 10px 0;
+}
+.reviewModal_spoiler_checkbox {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  margin: 4px;
+  border: 1px solid #8b98a5;
+  border-radius: 4px;
+}
+.reviewModal_spoiler_checkbox:checked {
+  border: 1px solid #8b98a5;
+  background-color: #1d9bf0;
+}
+.reviewModal_spoiler_checkbox:checked::before {
+  content: "";
+  display: block;
+  position: relative;
+  left: 9px;
+  top: 3.7px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.reviewModal_spoiler_checkbox:focus-visible {
+  outline: 2px solid #1d9bf0;
+  outline-offset: 2px;
+}
+
+/* reviewsIndex **************************************************************************/
+.worksShow_reviewsIndex_box{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.worksShow_reviewsIndex{
+  width: 50vw;
+  text-align: center;
+}
+.worksShow_reviewsIndex_title{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+/* .worksShow_reviewsIndex_reviews{} */
+.worksShow_reviewsIndex_review{
+  width: 100%;
+  border: 2px solid #8b98a5;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+}
+.worksShow_reviewsIndex_review_info{
+  display: flex;
+  margin-bottom: 10px;
+}
+.worksShow_reviewsIndex_review_user{
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.worksShow_reviewsIndex_review_created_at{
+  font-size: 8px;
+  font-weight: bold;
+  color: gray;
+}
+.worksShow_reviewsIndex_review_star_box{
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.worksShow_reviewsIndex_review_star{
+  font-size: 24px;
+  color: #ccc;
+  margin-right: 2px;
+}
+.worksShow_reviewsIndex_review_star.active{
+  color: #ffd700;
+}
+.worksShow_reviewsIndex_review_score{
+  color: #ffd700;
+  font-size: 12px;
+}
+.worksShow_reviewsIndex_review_spoiler_box{
+  display: flex;
+  align-items: center;
+}
+.worksShow_reviewsIndex_review_spoiler_message{
+  color: red;
+  font-size: 12px;
+}
+.worksShow_reviewsIndex_review_spoiler_button{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+}
+.worksShow_reviewsIndex_review_comment{
+  font-size: 12px;
+  text-align: left;
+  line-height: 20px;
 }
