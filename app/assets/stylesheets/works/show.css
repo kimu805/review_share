@@ -213,6 +213,7 @@
 .worksShow_reviewsIndex_review_info{
   display: flex;
   margin-bottom: 10px;
+  align-items: center;
 }
 .worksShow_reviewsIndex_review_user{
   font-size: 12px;
