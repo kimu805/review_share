@@ -4,7 +4,30 @@
       <%= link_to "review_share", root_path, class: "link" %>
     </div>
   </div>
-</header>
+  <div class= "header_right">
+    <ul class= "header_navbar_list">
+      <% if user_signed_in? %>
+        <li class= "header_navbar_item">
+          映画
+        </li>
+        <li class= "header_navbar_item">
+          本
+        </li>
+        <li class= "header_navbar_item">
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "link" %>
+        </li>
+      <% else %>
+        <li class= "header_navbar_item">
+          <%= link_to "会員登録", new_user_registration_path, class: "link" %>
+        </li>
+        <li class= "header_navbar_item">
+          <%= link_to "ログイン", new_user_session_path, class: "link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 
 <div class= "flash_message_box">
   <% if flash[:notice] %>
